@@ -1,0 +1,13 @@
+query {
+  My_user{
+    id
+    email
+    role
+  }
+
+  #   user_contacts_aggregate(distinct_on: country) {
+  #     aggregate {
+  #       count
+  #     }
+  #   }
+}

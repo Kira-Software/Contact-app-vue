@@ -1,0 +1,41 @@
+# -- Get User Contacts--
+# query getContacts {
+# 	user_contacts {
+# 		id
+# 		email
+# 		image_path
+# 		name
+# 		nick_name
+# 		user_id
+# 	}
+# }
+# query($offset: Int!, $limit: Int) {
+# 	user_contacts(offset: $offset, limit: $limit) {
+# 		email
+# 		id
+# 		image_path
+# 		name
+# 		nick_name
+# 		user_id
+# 		phone_number
+# 	}
+# 	user_contacts_aggregate(distinct_on: country) {
+# 		aggregate {
+# 			count
+# 		}
+# 	}
+# }
+
+query ($id: Int!) {
+  My_user(where: { id: { _eq: $id } }) {
+    email
+    Contacts {
+      contact_Name
+      Tel
+      picture_path
+      Address
+      created_at
+      contact_Id
+    }
+  }
+}

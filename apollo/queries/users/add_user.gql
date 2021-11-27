@@ -1,0 +1,18 @@
+#  -- Mutation For Add New Contat --
+
+# mutation ($email: String!, $password: String!) {
+#   insert_My_user(objects: { email: $email, password: $password }) {
+#     returning {
+#       email
+#       password
+#       role
+#     }
+#   }
+# }
+
+mutation ($email: String!, $password: String!) {
+  create_user(credentials: { email: $email, password: $password }) {
+    message
+    token
+  }
+}

@@ -1,0 +1,13 @@
+mutation ($name: String!, $tel: String!, $address: String!, $id: Int!) {
+  update_Contacts(
+    where: { contact_Id: { _eq: $id } }
+    _set: { contact_Name: $name, Tel: $tel, Address: $address }
+  ) {
+    returning {
+      contact_Id
+      contact_Name
+      Tel
+      Address
+    }
+  }
+}

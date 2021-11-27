@@ -1,0 +1,10 @@
+mutation($id: bigint!, $imagePath: String!) {
+	update_user_contacts_by_pk(pk_columns: { id: $id }, _set: { image_path: $imagePath }) {
+		email
+		id
+		image_path
+		name
+		nick_name
+		user_id
+	}
+}

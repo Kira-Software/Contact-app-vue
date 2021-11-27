@@ -1,0 +1,27 @@
+mutation (
+  $Address: String!
+  $Tel: String!
+  $added_By: Int!
+  $contact_Name: String
+  $picture_path: String!
+) {
+  insert_Contacts_one(
+    object: {
+      Address: $Address
+      Tel: $Tel
+      added_By: $added_By
+      contact_Name: $contact_Name
+      picture_path: $picture_path
+    }
+  ) {
+    contact_Id
+    contact_Name
+    Tel
+    created_at
+    picture_path
+    added_By
+    My_user {
+      email
+    }
+  }
+}

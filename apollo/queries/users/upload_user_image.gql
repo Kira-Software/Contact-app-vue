@@ -1,0 +1,7 @@
+mutation($userId: String!, $imagePath: String!) {
+	update_contact_users(_set: { image_path: $imagePath }, where: { userId: { _eq: $userId } }) {
+		returning {
+			image_path
+		}
+	}
+}
